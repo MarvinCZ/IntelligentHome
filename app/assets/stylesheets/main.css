@@ -31,7 +31,27 @@ html, body {
     padding-left: 15px;    
 }
 
-.navbar h1 b{
+.navbar-right li span {
+    margin: 0;
+    padding: 0;
+    line-height: 75px;
+    color: #ddd;
+    font-size: 13px;
+    padding-right: 15px;      
+}
+
+.navbar-right li span a, .navbar-right li span a:hover{
+    color: #D64F05;
+    outline: none;
+}
+
+.navbar h1 a, .navbar h1 a:hover{
+    color: #ddd;
+    text-decoration: none;
+    outline: none;
+}
+
+.navbar h1 a b{
     color: #D64F05;
 }
 

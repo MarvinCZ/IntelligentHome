@@ -29,6 +29,8 @@ function drawCharts(){
 }
 
 $(document).ready(function(){
-    google.charts.load("current", {packages:["timeline"]});
-    google.charts.setOnLoadCallback(drawCharts);
+    if($('.charts').length > 0){
+        google.charts.load("current", {packages:["timeline"]});
+        google.charts.setOnLoadCallback(drawCharts);
+    }
 });        
