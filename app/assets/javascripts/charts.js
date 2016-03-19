@@ -12,7 +12,7 @@ function drawChart(order) {
         [ 'President', 'Thomas Jefferson', new Date(1801, 2, 4), new Date(1809, 2, 4) ]]);
 
     var options = {
-        colors: ['#cbb69d', '#603913', '#c69c6e'],
+        colors: ['#D64F05', '#17A3CD'],
     };
                            
     chart.draw(dataTable, options);
@@ -22,7 +22,7 @@ function drawCharts(){
     var arr_activities = ["2016,0,0,14,0,0","2016,0,0,15,0,0"];
     var output_charts = "";
     
-    for( var i = 0; i < 3; i++ ){
+    for( var i = 0; i < 5; i++ ){
         $("#content-wrapper").append('<h2>Sekačka</h2><div class="chart-box-1"><div id="chart_timeline_'+i+'"></div></div>');
         drawChart(i);
     } 
