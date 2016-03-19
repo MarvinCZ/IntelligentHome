@@ -1,8 +1,6 @@
 $(document).ready(function(){
-    var dvs = [{name:"John",time_start:"xx1",time_end:"xx2"},{name:"Sekačka",value:"yyy"}];
 
-    function drawChart(order,time) {
-        var arr_time = time.split("|");
+    function drawChart(order,content) {
 
         var container = document.getElementById('chart_timeline_'+order);
         var chart     = new google.visualization.Timeline(container);
@@ -12,9 +10,10 @@ $(document).ready(function(){
         dataTable.addColumn({ type: 'date', id: 'Start' });
         dataTable.addColumn({ type: 'date', id: 'End' });
         dataTable.addRows([
-            [ 'President', '', new Date(1789, 3, 30), new Date(1797, 2, 4) ],
+            [ "", "", new Date(1789, 3, 30), new Date(1797, 2, 4) ],
             [ 'President', '', new Date(1801, 2, 4), new Date(1809, 2, 4) ]
         ]);
+        //dataTable.addRows = content;
 
         var options = {
             colors: ['#D64F05'],
@@ -25,11 +24,26 @@ $(document).ready(function(){
 
     function drawCharts(){
         
-        for( var i = 0; i < 2; i++ ){
-            time = dvs[i]["time_start"]+"|"+dvs[i]["time_end"];
-            
-            $("#content-wrapper").append('<h2>'+dvs[i]["name"]+'</h2><div class="chart-box-1"><div id="chart_timeline_'+i+'"></div></div>');
-            drawChart(i,time);
+        for( var i = 0; i < window.chartdata.length; i++ ){
+            $("#content-wrapper").append('<h2>'+window.chartdata[i].name+'</h2>');
+
+            for(var y = 0; y < chartdata[i].values.length; y++ ){
+                var kind = window.chartdata[i].values[y].kind;
+                var nazev = window.chartdata[i].values[y].name;
+                $("#content-wrapper").append('<div class="chart-box-1"><div id="chart_timeline_'+y+'"></div></div>');                
+                //var content = [];
+
+                for(var z = 0; z < window.chartdata[i].values[y].values; z++ ){
+                    var time  = window.chartdata[i].values[y].values[z].time;
+                    var value  = window.chartdata[i].values[y].values[z].value;
+
+                    if( 1 == 1 ){
+                        //content.push({kind, nazev, new Date(1789, 3, 30), new Date(1797, 2, 4)});
+                    }
+                }
+  //              alert(content);
+                drawChart(y,content);
+            }
         } 
     }
 
