@@ -121,6 +121,11 @@ html, body {
     min-height: 100%;        
 }
 
+#sidebar-box button span{
+    position: relative;
+    top: 4px;
+}
+
 #sidebar-box button {
     position: absolute;
     top: 75px; right: 0;
