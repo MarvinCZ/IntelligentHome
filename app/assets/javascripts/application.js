@@ -19,11 +19,9 @@ $(document).ready(function(){
     $("#sidebar-box button").click(function(){
         if( $("#sidebar-box").hasClass("shown") ){
             $("#sidebar-box").animate({"left":"-200px"});
-            $("#toolbar-wrapper").css({"box-shadow":"0 0 0 rgba(0, 0, 0, 0)"});
             $("#sidebar-box").removeClass("shown");
         }else{
             $("#sidebar-box").animate({"left":"0"});
-            $("#toolbar-wrapper").css({"box-shadow":"1px 0 7px #000"});
             $("#sidebar-box").addClass("shown");
         }
     });
