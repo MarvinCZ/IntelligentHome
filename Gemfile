@@ -7,7 +7,7 @@ gem 'rails', '4.2.3'
 gem 'sqlite3'
 
 gem 'haml'
-
+gem 'momentjs-rails'
 gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
