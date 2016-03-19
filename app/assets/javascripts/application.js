@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require moment
 //= require moment/cs.js
 //= require turbolinks
