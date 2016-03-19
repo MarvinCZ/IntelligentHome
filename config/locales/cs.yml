@@ -19,24 +19,24 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+cs:
   activerecord:
     errors:
       models:
         user:
           attributes:
             device:
-              blank: "Device needs to have an user assigned."
+              blank: "Zařízení musí být přiřazeno nějakému uživateli."
             email:
-              blank: "Email can't be blank."
+              blank: "Email nesmí být prázdný."
             password:
-              blank: "Password can't be blank."
-              too_short: "Password is too short."
-              too_long: "Password is too long."
+              blank: "Heslo nesmí být prázdné."
+              too_short: "Heslo je moc krátké."
+              too_long: "Heslo je moc dlouhé."
         device:
           attributes:
             measurement:
-              blank: "Measurement needs to have a device assigned."
+              blank: "Měření musí být přiřazeno nějakému zařízení."
             kind:
-              blank: "Device kind can't be blank."
+              blank: "Typ zařízení nesmí být prázdný."
         measurement:
