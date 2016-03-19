@@ -1,4 +1,3 @@
 %script
-  var devs = #{raw @d};
-  var meas = #{raw @m};
+	window.chartdata = JSON.parse('#{@data.html_safe}')
 .charts
