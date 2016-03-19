@@ -5,46 +5,53 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    %link{:href => "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"}
-    %script{:src => "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"}
     %script{:src => "https://www.gstatic.com/charts/loader.js", :type => "text/javascript"}
-    %script{:src => "script/js/charts.js", :type => "text/javascript"}    
+    %script{:src => "script/js/charts.js", :type => "text/javascript"}
   %body   
     #body-wrapper
       %nav.navbar.navbar-default
         .container-fluid
-          .navbar-header
-            %h1.navbar-brand
-              %a{:href => dashboard_path}
-                %b> i
-                nteligent
-                %b HOME
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              %span
-                USERNAME
-                %a{:href => destroy_user_session_path,"data-method" => 'delete'}
-                  (Log Out)
+          - if current_user
+            .navbar-header
+              %h1.navbar-brand
+                = link_to dashboard_path do
+                  %b> i
+                  nteligent
+                  %b HOME
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                %span
+                  = current_user.email
+                  = link_to destroy_user_session_path, method: :delete do
+                    (Log Out)
       #sidebar-box
         %button.btn.btn-warning{:type => "button"}
           %span.glyphicon.glyphicon-th
         #toolbar-wrapper
           %ul
-            %li
-              %a{:href => new_user_session_path}
-                %span.glyphicon.glyphicon-user
-                %br/
-                Sign
-                %b
-                  In
-            %li
-              %a{:href => new_user_registration_path}
-                %span.glyphicon.glyphicon-log-in
-                %br/
-                Sign
-                %b
-                  Up
+            - if current_user
+              %li
+                = link_to new_user_session_path do
+                  %span.glyphicon.glyphicon-user
+                  %br/
+                  Sign
+                  %b
+                    In
+            - else
+              %li
+                = link_to new_user_session_path do
+                  %span.glyphicon.glyphicon-user
+                  %br/
+                  Sign
+                  %b
+                    In
+              %li
+                = link_to new_user_registration_path do
+                  %span.glyphicon.glyphicon-log-in
+                  %br/
+                  Sign
+                  %b
+                    Up
           .copyright
             %span
               &copy; T3M | AH 2016        

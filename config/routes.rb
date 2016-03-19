@@ -10,11 +10,10 @@ Rails.application.routes.draw do
 
   get 'homepage/index'
 
-  get 'user/login'
-
-  get 'user/register'
-
   get 'home/show'
+  
+  get 'user/device' => 'user#device'
+  post 'register-device' => 'user#deviceRegister'
 
   root 'homepage#index'
 
