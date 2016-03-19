@@ -4,4 +4,8 @@ class Sensor < ActiveRecord::Base
   validates :device, presence: true
 	has_many :measurements
 	validates :kind, presence: true
+  
+  def measurementsToJson
+    self.measurements
+  end
 end
