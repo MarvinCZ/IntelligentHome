@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  put 'entry/put_moving'
+
   devise_for :users
   get 'dashboard/show'
 
