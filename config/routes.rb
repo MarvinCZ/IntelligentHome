@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'dashboard/show'
+
+  get 'user/:id' => 'user#show'
+
+  get 'homepage/index'
+
+  get 'user/login'
+
+  get 'user/register'
+
+  get 'home/show'
+
+  root 'homepage#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

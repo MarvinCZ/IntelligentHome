@@ -19,6 +19,11 @@ set :rvm_ruby_version, '2.2.2'
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
 
+
+def thin_exec cmd
+  run "cd #{current_path}; thin #{cmd.to_s} -C #{release_path}/config/thin/#{development}.yml"
+end
+
 # Default value for :format is :pretty
 # set :format, :pretty
 
@@ -40,7 +45,21 @@ SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ru
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
+namespace :deploy do	
+  desc "Starts the thin application server"
+  task :start do
+    thin_exec :start
+  end
+  
+  desc "Stops the thin application server"
+  task :stop do
+    thin_exec :stop
+  end
+  
+  desc "Restarts the thin application server"
+  task :restart do
+    thin_exec :restart
+  end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -50,5 +69,4 @@ namespace :deploy do
       # end
     end
   end
-  after 'deploy:publishing', 'thin:restart'
 end

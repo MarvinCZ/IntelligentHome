@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  value: 1
+  device_id: 
+
+two:
+  id: 1
+  value: 1
+  device_id: 
