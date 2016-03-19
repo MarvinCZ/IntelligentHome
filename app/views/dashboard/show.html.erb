@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Inteligent Home</title>
+    <meta name="Author" content="Frixs"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="script/js/charts.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#sidebar-box button").click(function(){
+                if( $("#sidebar-box").css("left") == "0px" ){
+                    $("#sidebar-box").animate({"left":"-200px"});
+                    $("#toolbar-wrapper").css({"box-shadow":"0 0 0 rgba(0, 0, 0, 0)"});
+                }else{
+                    $("#sidebar-box").animate({"left":"0"});
+                    $("#toolbar-wrapper").css({"box-shadow":"1px 0 7px #000"});
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="body-wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">                  
+                    <h1 class="navbar-brand"><b>i</b>nteligent<b>HOME</b></h1>
+                </div>
+                <!--  
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li> 
+                    <li><a href="#">Page 3</a></li> 
+                </ul>
+                -->
+            </div>
+        </nav>
+        <div id="sidebar-box">
+            <button type="button" type="button" class="btn btn-warning">
+                <span class="glyphicon glyphicon-th"></span>
+            </button>              
+            <div id="toolbar-wrapper">
+                <ul>
+                    <!-- links to login and signup page -->
+                    <li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span><br />Sign Up</a></li>
+                    <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span><br />Sign In</a></li>  
+                </ul>
+            </div>
+        </div>    
+        <div id="content-wrapper">
+            
+        </div>
+    </div>
+</body>
+</html>

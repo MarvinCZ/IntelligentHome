@@ -1,0 +1,150 @@
+/*
+    #343234
+    #A6A2A5
+    #D64F05
+    #17A3CD
+    #E6E6E6
+*/
+
+html, body {
+    height: 100%;
+    font-family: "Arial", Helvetica, sans-serif;
+    background-color: #E6E6E6 !important;
+}
+
+
+
+/* HEADER */
+.navbar-default{
+    background-color: #1e1e24 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    height: 75px;
+}
+
+.navbar h1{
+    margin: 0;
+    padding: 0;
+    line-height: 75px;
+    color: #ddd !important;
+    font-size: 22px;
+    padding-left: 15px;    
+}
+
+.navbar h1 b{
+    color: #D64F05;
+}
+
+.navbar {
+    z-index: 2;
+    margin-bottom: 0 !important;
+    box-shadow: 0 1px 7px #000000;
+}
+
+
+
+/* SIDE MENU */
+#toolbar-wrapper{
+    background-color: #343234;
+    width: 200px;
+    text-align: center;
+    height: 100%;
+}
+
+#toolbar-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 75px;
+    padding-top: 30px;
+    width: 100%;
+}
+
+#toolbar-wrapper ul li {
+    width: 100%;
+}
+
+#toolbar-wrapper ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ddd;
+    transition: color .2s ease;
+}
+
+#toolbar-wrapper ul li a span{
+    font-size: 50px;
+    color: #ddd;
+    position: relative;
+    top: 5px;
+}
+
+#toolbar-wrapper ul li a:hover {
+    text-decoration: none;
+    color: #17A3CD;
+}
+
+#sidebar-box{
+    z-index: 1; 
+    position: absolute;
+    top: 0; left: -200px;    
+    width: 240px;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    overflow-y: hidden;
+    height: 100% !important;        
+}
+
+#sidebar-box button {
+    position: absolute;
+    top: 75px; right: 0;
+    display: block !important;
+    padding: 0px;
+    font-size: 26px;
+    background-color: #D64F05;
+    border: none;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border-radius: 0px !important;
+}
+
+#sidebar-box button:hover {
+    background-color: #a73b00 !important;
+    outline: none;
+}
+
+
+/* CONTENT WRAPPER */
+#content-wrapper, #login-wrapper, #registration-wrapper {
+    max-width: 1000px;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+#content-wrapper .chart-box-1 {
+    z-index: 0;
+    margin: auto;
+    height: 100px;
+    max-width: 60%;
+}
+
+#content-wrapper .chart-box-2 {
+    z-index: 0;
+    margin: auto;
+    max-width: 76%;
+}
+
+#content-wrapper h2 {
+    display: block;
+    text-transform: uppercase;
+    color: #343234;
+    font-weight: bold;
+    border-bottom: 2px dotted #343234;
+}

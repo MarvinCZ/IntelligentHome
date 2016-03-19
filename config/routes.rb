@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'dashboard/show'
+  
+  get 'dashboard' => 'dashboard#show'
 
   get 'user/:id' => 'user#show'
 
