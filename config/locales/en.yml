@@ -35,9 +35,15 @@ en:
           attributes:
             user:
               blank: "Device has to be assigned to a user."
-            kind:
-              blank: "Device kind can't be blank."
-        measurement:
+        sensor:
           attributes:
             device:
-              blank: "Measurement has to be assigned to a device."
+              blank: "Sensor has to be assigned to a device."
+            kind:
+              blank: "Sensor kind can't be blank."
+        measurement:
+          attributes:
+            sensor:
+              blank: "Measurement has to be assigned to a sensor."
+            value:
+              less_than: "The value of movement sensor can equal only to 1 or 0."

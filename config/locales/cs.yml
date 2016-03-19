@@ -35,9 +35,15 @@ cs:
           attributes:
             user:
               blank: "Zařízení musí být přiřazeno nějakému uživateli."
-            kind:
-              blank: "Typ zařízení nesmí být prázdný."
-        measurement:
+        sensor:
           attributes:
             device:
-              blank: "Měření musí být přiřazeno nějakému zařízení."
+              blank: "Senzor musí být přiřazený nějakému zařízení."
+            kind:
+              blank: "Typ senzoru nesmí být prázdný."
+        measurement:
+          attributes:
+            sensor:
+              blank: "Měření musí být přiřazeno nějakému senzoru."
+            value:
+              less_than: "Hodnota snímače pohybu se může být pouze 1 nebo 0."

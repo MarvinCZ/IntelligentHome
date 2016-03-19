@@ -11,24 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319091032) do
+ActiveRecord::Schema.define(version: 20160319184401) do
 
   create_table "devices", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "secret"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "devices", ["user_id"], name: "index_devices_on_user_id"
+
+  create_table "measurements", force: :cascade do |t|
+    t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sensor_id"
+  end
+
+  add_index "measurements", ["sensor_id"], name: "index_measurements_on_sensor_id"
+
+  create_table "sensors", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "kind"
-    t.integer  "user_id"
-  end
-
-  create_table "measurements", force: :cascade do |t|
-    t.integer  "value"
     t.integer  "device_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
-  add_index "measurements", ["device_id"], name: "index_measurements_on_device_id"
+  add_index "sensors", ["device_id"], name: "index_sensors_on_device_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,11 +55,9 @@ ActiveRecord::Schema.define(version: 20160319091032) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "secret"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["secret"], name: "index_users_on_secret", unique: true
 
 end

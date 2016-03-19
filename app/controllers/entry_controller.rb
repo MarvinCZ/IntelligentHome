@@ -4,11 +4,11 @@ class EntryController < ApplicationController
 		@kind = params[:kind]
   	@value = params[:value]
 		
-		u = User.find_by_secret(@secret)
-		d = u.device.find_by_kind(@kind)
-		m = Measurement.new
-		m.device_id = d.id
-		m.value = @value
-		m.save
+    u = User.find_by_secret(@secret)
+    d = u.device.find_by_kind(@kind)
+    m = Measurement.new
+    m.device_id = d.id
+    m.value = @value
+    m.save
   end
 end
