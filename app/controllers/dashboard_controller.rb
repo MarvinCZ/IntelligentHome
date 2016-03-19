@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :edit, :update, :show]
+  
   def show
     # @d = User.first.devices
     @d = User.first.devices

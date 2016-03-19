@@ -24,7 +24,7 @@
             %li
               %span
                 USERNAME
-                %a{:href => destroy_user_session_path}
+                %a{:href => destroy_user_session_path,"data-method" => 'delete'}
                   (Log Out)
       #sidebar-box
         %button.btn.btn-warning{:type => "button"}
