@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
     # @d = User.first.devices
     @d = User.first.devices
     @d.each do |d|
-      (@m ||= []).push(d.measurements.as_json())
+      (@m ||= []).push(d.measurements.to_json())
     end
     @d = @d.as_json()
   end

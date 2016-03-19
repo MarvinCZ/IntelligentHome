@@ -103,6 +103,14 @@ html, body {
     top: 5px;
 }
 
+#toolbar-wrapper ul li a:hover span{
+    color: #fff;
+}
+
+#toolbar-wrapper ul li a:hover b{
+    color: #D64F05;
+}
+
 #toolbar-wrapper ul li a:hover {
     text-decoration: none;
     color: #17A3CD;
