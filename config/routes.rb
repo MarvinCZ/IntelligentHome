@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get 'user/register'
 
   get 'home/show'
+  
+  get 'device' => 'user#device'
+  
+  post 'register-device' => 'user#deviceRegister'
 
   root 'homepage#index'
 
