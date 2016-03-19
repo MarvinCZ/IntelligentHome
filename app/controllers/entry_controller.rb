@@ -1,18 +1,18 @@
 class EntryController < ApplicationController
   def put_moving
-	@secret = params[:secret].to_i
-	@kind = params[:kind]
-  @value = params[:value]
+    @secret = params[:secret].to_i
+    @kind = params[:kind]
+    @value = params[:value]
 
-	u = User.find_by_secret(@secret)
-	return if u == nil
-	d = u.devices.find_by_kind(@kind)
-	return if d == nil
-	m = Measurement.new
-	m.device_id = d.id
-	m.value = @value
-	m.save
+    d = Device.find_by_secret(@secret)
+    return if d == nil
+    s = d.sensors.find_by_kind(@kind)
+    return if s == nil
+    m = Measurement.new
+    m.sensor_id = s.id
+    m.value = @value
+    m.save
 
-	render :nothing => true
+    render :nothing => true
   end
 end
