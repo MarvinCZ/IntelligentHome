@@ -194,7 +194,7 @@ html, body {
 
 /* CONTENT WRAPPER */
 #content-wrapper, #login-wrapper, #registration-wrapper {
-    max-width: 880px;
+    max-width: 85%;
     height: 100%;
     margin: auto;
     padding: 10px;
