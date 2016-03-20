@@ -10,6 +10,15 @@ class UserController < ApplicationController
   end
   
   def device
+    @data = User.find_by_id(current_user.id).devices.to_json
+  end
+  
+  def deviceDelete
+    @id = params[:device][:id]
+    @d = Device.find_by_id(@id)
+    @d.user_id = nil
+    @d.save
+    redirect_to devices_path
   end
   
   def deviceRegister

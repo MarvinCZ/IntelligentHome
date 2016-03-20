@@ -10,6 +10,6 @@
   = submit_tag "Register your device"
 %h2
   Device List
-= form_tag devices_delete_path, :method => :delete do
-  <!-- list of devices is currently listed under -->
-  = User.find_by_id(current_user.id).devices.to_json
+= form_tag devices_delete_path, :method => :delete, :id => "device_form" do
+  = select("device", "id", current_user.devices.collect {|d| [ d.name, d.id ] })
+  = submit_tag "Delete selected device"
