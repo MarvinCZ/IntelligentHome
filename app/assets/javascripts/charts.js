@@ -18,6 +18,9 @@ $(document).ready(function(){
 
         var options = {
             colors: ['#D64F05'],
+            tooltip: {
+                trigger: 'none'
+            }
         };
                                
         chart.draw(dataTable, options);
@@ -47,7 +50,8 @@ $(document).ready(function(){
             for(var y = 0; y < chartdata[i].values.length; y++ ){
                 var kind = window.chartdata[i].values[y].kind;
                 var nazev = window.chartdata[i].values[y].name;
-                $("#content-wrapper").append('<div class="chart-box-1"><div id="chart_'+i+'_'+y+'"></div></div>');
+                var c = kind == "movement" ?  '1' : '2';
+                $("#content-wrapper").append('<div class="chart-box-' + c + '"><div id="chart_'+i+'_'+y+'"></div></div>');
 
                 if(kind === "movement"){
                     var content = [];
@@ -76,7 +80,7 @@ $(document).ready(function(){
                     var data = [];
                     for(var z = 0; z < window.chartdata[i].values[y].values.length; z++ ){
                         var v = window.chartdata[i].values[y].values[z];
-                        data.push([moment(v.time).format("h:mm"), v.value]);
+                        data.push([moment(v.time).format("h:mm:ss"), v.value]);
                     }
                     drawPointLineChart(i, y,data,nazev || "Sensor");
                 }

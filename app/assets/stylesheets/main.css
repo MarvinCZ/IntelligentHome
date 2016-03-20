@@ -211,7 +211,7 @@ html, body {
 #content-wrapper .chart-box-2 {
     z-index: 0;
     margin: auto;
-    max-width: 76%;
+    max-width: 60%;
 }
 
 #content-wrapper h2 {

@@ -8,10 +8,9 @@ class EntryController < ApplicationController
 		end
 		s = d.sensors.where(kind: kind)
 		if s.count == 0
-			byebug
 			s = Sensor.new
 			s.uid = uid
-			s.kind = 0
+			s.kind = kind
 			s.device = d
 			s.save
 		else
