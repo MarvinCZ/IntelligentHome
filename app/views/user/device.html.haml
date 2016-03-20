@@ -2,12 +2,12 @@
   Device Settings
 %h2
   Device Registration
-= form_tag devices_register_path, :method => :put do
-  = label_tag 'secret', 'Device secret code'
-  = text_field_tag 'secret'
-  = label_tag 'name', 'Your personal device name'
-  = text_field_tag 'name'
-  = submit_tag "Register your device"
+= form_for @dev, url: devices_register_path do |f|
+  = f.label :secret
+  = f.text_field :secret
+  = f.label :name
+  = f.text_field :name
+  = f.submit
 %h2
   Device List
 = form_tag devices_delete_path, :method => :delete, :id => "device_form" do

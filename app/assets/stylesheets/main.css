@@ -133,7 +133,7 @@ html, body {
     height: 100%;
     min-height: 100%;        
 }
-
+/*
 #sidebar-box button span{
     position: relative;
     top: 4px;
@@ -149,6 +149,25 @@ html, body {
     border: none;
     width: 40px;
     height: 40px;
+    outline: none;
+    border-radius: 0px !important;
+}
+
+#sidebar-box button:hover {
+    background-color: #a73b00 !important;
+    outline: none;
+}*/
+#sidebar-box button {
+    position: absolute;
+    top: 0; right: 0;
+    display: block !important;
+    padding: 0px;
+    font-size: 26px;
+    background-color: #D64F05;
+    border: none;
+    width: 40px;
+    overflow: auto;
+    height: 100%;
     outline: none;
     border-radius: 0px !important;
 }
@@ -175,7 +194,7 @@ html, body {
 
 /* CONTENT WRAPPER */
 #content-wrapper, #login-wrapper, #registration-wrapper {
-    max-width: 880px;
+    max-width: 85%;
     height: 100%;
     margin: auto;
     padding: 10px;
@@ -244,7 +263,7 @@ html, body {
     text-align: right;
     font-size: 50px;
     color: #D64F05;
-    text-shadow: 0 0 1px #000;
+    font-weight: bold;
     letter-spacing: -4px;    
 }
 
@@ -252,4 +271,5 @@ html, body {
     margin-left: -8px;
     margin-right: -8px;
     color: #ddd;
+    text-shadow: 0 0 1px #000;
 }

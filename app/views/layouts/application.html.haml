@@ -33,10 +33,15 @@
                   %b HOME
       #sidebar-box
         %button.btn.btn-warning{:type => "button"}
-          %span.glyphicon.glyphicon-th
+          %span.glyphicon.glyphicon-menu-right
         #toolbar-wrapper
           %ul
             - if current_user
+              %li
+                = link_to dashboard_path do
+                  %span.glyphicon.glyphicon-home
+                  %br/
+                  Dashboard              
               %li
                 = link_to edit_user_registration_path do
                   %span.glyphicon.glyphicon-cog
