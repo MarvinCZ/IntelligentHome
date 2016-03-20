@@ -111,6 +111,7 @@ GEM
     momentjs-rails (2.11.0)
       railties (>= 3.1)
     multi_json (1.11.2)
+    mysql (2.9.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.1.0)
@@ -212,6 +213,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   momentjs-rails
+  mysql
   rails (= 4.2.3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -221,3 +223,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6

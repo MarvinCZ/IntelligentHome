@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  post 'devices/register'
+
+  delete 'devices/remove'
+
+  get 'devices/edit'
+
   get 'entry/put_moving'
   get 'entry/put_distance'
   get 'entry/put_gas_value'
@@ -15,8 +21,8 @@ Rails.application.routes.draw do
   get 'home/show'
   
   get 'devices' => 'user#device'
-  put 'devices/register' => 'user#deviceRegister'
-  delete 'devices/delete' => 'user#deviceDelete'
+  put 'devices/register' => 'user#device_register'
+  delete 'devices/delete' => 'user#device_delete'
 
   root 'homepage#index'
 
