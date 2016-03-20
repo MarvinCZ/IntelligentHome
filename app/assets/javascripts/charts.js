@@ -11,7 +11,7 @@ $(document).ready(function(){
         dataTable.addColumn({ type: 'date', id: 'End' });
         dataTable.addRows([
             [ "", "", new Date(1789, 3, 30), new Date(1797, 2, 4) ],
-            [ 'President', '', new Date(1801, 2, 4), new Date(1809, 2, 4) ]
+            [ 'President', '', new Date(1801, 2, 4, 0, 0, 0), new Date(1801, 2, 4, 0, 0, 0) ]
         ]);
         //dataTable.addRows = content;
 
@@ -31,17 +31,18 @@ $(document).ready(function(){
                 var kind = window.chartdata[i].values[y].kind;
                 var nazev = window.chartdata[i].values[y].name;
                 $("#content-wrapper").append('<div class="chart-box-1"><div id="chart_timeline_'+y+'"></div></div>');                
-                //var content = [];
+                var content = ([]);
 
-                for(var z = 0; z < window.chartdata[i].values[y].values; z++ ){
+                for(var z = 0; z < window.chartdata[i].values[y].values.length; z++ ){
                     var time  = window.chartdata[i].values[y].values[z].time;
                     var value  = window.chartdata[i].values[y].values[z].value;
-
-                    if( 1 == 1 ){
-                        //content.push({kind, nazev, new Date(1789, 3, 30), new Date(1797, 2, 4)});
+                    alert();
+                    if( value == 1 ){
+                        content = [kind, nazev, new Date(2016, 3, 30), new Date(1797, 2, 4)];
                     }
                 }
-  //              alert(content);
+
+                //alert(content);
                 drawChart(y,content);
             }
         } 
