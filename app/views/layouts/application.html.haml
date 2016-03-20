@@ -41,7 +41,12 @@
                 = link_to edit_user_registration_path do
                   %span.glyphicon.glyphicon-cog
                   %br/
-                  Settings
+                  Personal Settings    
+              %li
+                = link_to devices_path do
+                  %span.glyphicon.glyphicon-phone
+                  %br/
+                  Device Settings
             - else
               %li
                 = link_to new_user_session_path do

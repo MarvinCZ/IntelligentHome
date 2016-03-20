@@ -21,6 +21,6 @@ class UserController < ApplicationController
     @d.secret = @secret.to_i
     @d.name = @name
     @d.save
-    redirect_to user_device_path
+    redirect_to devices_path
   end
 end

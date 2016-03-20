@@ -12,8 +12,9 @@ Rails.application.routes.draw do
 
   get 'home/show'
   
-  get 'user/device' => 'user#device'
-  post 'register-device' => 'user#deviceRegister'
+  get 'devices' => 'user#device'
+  put 'devices/register' => 'user#deviceRegister'
+  delete 'devices/delete' => 'user#deviceDelete'
 
   root 'homepage#index'
 
