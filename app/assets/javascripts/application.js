@@ -22,10 +22,14 @@ $(document).ready(function(){
     $("#sidebar-box button").click(function(){
         if( $("#sidebar-box").hasClass("shown") ){
             $("#sidebar-box").animate({"left":"-200px"});
+            $(this).find(".glyphicon").removeClass("glyphicon-menu-left");
+            $(this).find(".glyphicon").addClass("glyphicon-menu-right");    
             $("#sidebar-box").removeClass("shown");
         }else{
             $("#sidebar-box").animate({"left":"0"});
             $("#sidebar-box").addClass("shown");
+            $(this).find(".glyphicon").removeClass("glyphicon-menu-right");
+            $(this).find(".glyphicon").addClass("glyphicon-menu-left");             
         }
     });
 });
