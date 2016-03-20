@@ -3,13 +3,11 @@
 %h2
   Device Registration
 = form_for @dev, url: devices_register_path do |f|
-  = f.label :secret
-  = f.text_field :secret
-  = f.label :name
-  = f.text_field :name
-  = f.submit
-%h2
-  Device List
-= form_tag devices_delete_path, :method => :delete, :id => "device_form" do
-  = select("device", "id", current_user.devices.collect {|d| [ d.name, d.id ] })
-  = submit_tag "Delete selected device"
+  .field
+    = f.label :secret
+    = f.text_field :secret
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit
