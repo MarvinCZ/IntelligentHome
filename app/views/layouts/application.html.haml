@@ -24,6 +24,13 @@
                   = current_user.email
                   = link_to destroy_user_session_path, method: :delete do
                     (Log Out)
+          - else
+            .navbar-header
+              %h1.navbar-brand
+                = link_to root_path do
+                  %b> i
+                  nteligent
+                  %b HOME
       #sidebar-box
         %button.btn.btn-warning{:type => "button"}
           %span.glyphicon.glyphicon-th
@@ -31,12 +38,10 @@
           %ul
             - if current_user
               %li
-                = link_to new_user_session_path do
-                  %span.glyphicon.glyphicon-user
+                = link_to edit_user_registration_path do
+                  %span.glyphicon.glyphicon-cog
                   %br/
-                  Sign
-                  %b
-                    In
+                  Settings
             - else
               %li
                 = link_to new_user_session_path do
