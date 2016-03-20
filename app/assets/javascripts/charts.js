@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-    function drawTimeLineChart(order,content, name) {
+    function drawTimeLineChart(i, order,content, name) {
 
-        var container = document.getElementById('chart_'+order);
+        var container = document.getElementById('chart_'+i+'_'+order);
         var chart     = new google.visualization.Timeline(container);
         var dataTable = new google.visualization.DataTable();
         dataTable.addColumn({ type: 'string', id: 'Name' });
@@ -13,6 +13,7 @@ $(document).ready(function(){
             dataTable.addRow(
                 [ name , content[i][0], content[i][1] ]
             );
+            console.log(name);
         }
 
         var options = {
@@ -22,8 +23,8 @@ $(document).ready(function(){
         chart.draw(dataTable, options);
     }
 
-    function drawPointLineChart(order,content, name){
-        var container = document.getElementById('chart_'+order);
+    function drawPointLineChart(i, order,content, name){
+        var container = document.getElementById('chart_'+i+'_'+order);
         var chart     = new google.visualization.LineChart(container);
         var arr = [['time', 'value']];
         for(var i = 0; i < content.length; i++ ){
@@ -46,7 +47,7 @@ $(document).ready(function(){
             for(var y = 0; y < chartdata[i].values.length; y++ ){
                 var kind = window.chartdata[i].values[y].kind;
                 var nazev = window.chartdata[i].values[y].name;
-                $("#content-wrapper").append('<div class="chart-box-1"><div id="chart_'+y+'"></div></div>');
+                $("#content-wrapper").append('<div class="chart-box-1"><div id="chart_'+i+'_'+y+'"></div></div>');
 
                 if(kind === "movement"){
                     var content = [];
@@ -69,7 +70,7 @@ $(document).ready(function(){
                     if(progres){
                         content.push([start.toDate(), konec.toDate()]);
                     }
-                    drawTimeLineChart(y,content, nazev);
+                    drawTimeLineChart(i, y,content, nazev || "Sensor");
                 }
                 else{
                     var data = [];
@@ -77,7 +78,7 @@ $(document).ready(function(){
                         var v = window.chartdata[i].values[y].values[z];
                         data.push([moment(v.time).format("h:mm"), v.value]);
                     }
-                    drawPointLineChart(y,data,nazev);
+                    drawPointLineChart(i, y,data,nazev || "Sensor");
                 }
             }
         } 
