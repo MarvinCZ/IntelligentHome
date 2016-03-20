@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'entry/put_moving'
+  get 'entry/put_distance'
+  get 'entry/put_gas_value'
 
   devise_for :users
   get 'dashboard/show'
